@@ -13,6 +13,7 @@ const geocode = (address, callback) => {
                 // console.log('lng:- ' + data.features[0].center[1])
                 //console.log(val.features.length >=0)
                 //console.log(val.features.length)
+                console.log(val)
                 const data = {
                     name: val.features[0].place_name,
                     lat: val.features[0].center[0],
@@ -47,8 +48,11 @@ const weatherinfo = (lat, lng,callback) => {
                 const val={
                     icon:data.currently.icon,
                     time:data.currently.time,
-                    temperature:data.currently.temperature
+                    temperature:data.currently.temperature,
+                    timezone:data.timezone,
+                    summary:data.currently.summary
                 }
+                console.log(val)
                 callback(undefined,val)
             } else {
                 callback({error:'unable to predict weather'},undefined)

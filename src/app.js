@@ -65,7 +65,9 @@ app.get('/weather',(req,res)=>{
                     utils.weatherinfo(response.lat,response.lng,(error,response)=>{
                         if(response)
                         {
+                            console.log(response)
                             return res.send(response)
+                           
                         }
                         if(error){
                             return res.send(error)
@@ -103,4 +105,4 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(port, ()=>{console.log('server is up and running!!! Post:- '+port)})
+app.listen(3000, ()=>{console.log('server is up and running!!! Post:- '+port)})
