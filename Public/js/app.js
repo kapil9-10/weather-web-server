@@ -1,7 +1,7 @@
 // console.log('client site js ')
 
 const show_wether=(address,callback)=>{
-    fetch('http://localhost:3000/weather?search='+encodeURIComponent(address)).then((response)=>
+    fetch('/weather?search='+encodeURIComponent(address)).then((response)=>
     {
        response.json().then((data)=>{
            if(!data.error){

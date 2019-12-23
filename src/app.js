@@ -6,6 +6,7 @@ const utils=require('./utils')
 // console.log(__dirname)
 // console.log(path.join(__dirname,'../Public'))
 const app=express()
+const port=process.env.PORT || 3000
 // define path for expres config
 const publicDirPath=path.join(__dirname,'../Public')
 const viewPath=path.join(__dirname,'../template/views')
@@ -102,4 +103,4 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(3000, ()=>{console.log('server is up and running!!! Post:- 3000')})
+app.listen(port, ()=>{console.log('server is up and running!!! Post:- '+port)})
